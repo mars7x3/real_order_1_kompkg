@@ -30,7 +30,7 @@ def update_price_in_db(price, id):
 def chek_price():
     start_time = datetime.now()
     mysql_db_columns = mysql_connect().execute_sql("select p.product_id, p.product_code, kp.price from komp_products as p \
-                                            join komp_product_prices as kp where kp.product_id = p.product_id LIMIT 5",)
+                                            join komp_product_prices as kp where kp.product_id = p.product_id",)
     counter = 0
     for product_id, product_article, product_price  in mysql_db_columns:
         counter += 1        
@@ -40,7 +40,7 @@ def chek_price():
             update_price_in_db(store_price, product_id)
 
     finish_time = datetime.now()
-    return finish_time - start_time
+    return str(finish_time - start_time)[:-7]
         
 
 
