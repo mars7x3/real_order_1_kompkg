@@ -1,0 +1,8 @@
+requests
+beautifulsoup4
+lxml
+psycopg2-binary==2.8.5
+SQLAlchemy==1.4.1
+pymysql
+pyTelegramBotAPI
+python-decouple
